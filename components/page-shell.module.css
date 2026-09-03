@@ -1,0 +1,19 @@
+.shell {
+  min-height: 100vh;
+  padding: var(--space-lg);
+}
+
+.shell[data-tone="krang"] {
+  --accent: #c85b1d;
+}
+
+.inner {
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .shell {
+    padding: var(--space-md);
+  }
+}

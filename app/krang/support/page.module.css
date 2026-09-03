@@ -1,0 +1,52 @@
+.eyebrow {
+  margin: 0 0 var(--space-sm);
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.lead {
+  margin: var(--space-md) 0 0;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.5;
+}
+
+.heading {
+  margin: 0 0 var(--space-sm);
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+}
+
+.body {
+  margin: 0 0 var(--space-md);
+  color: color-mix(in srgb, var(--foreground) 88%, var(--muted));
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: color-mix(in srgb, var(--foreground) 88%, var(--muted));
+  line-height: 1.75;
+}
+
+.link {
+  color: var(--accent);
+}
+
+.footerLine {
+  margin: 0;
+}
+
+.footerLine + .footerLine {
+  margin-top: var(--space-xs);
+}
