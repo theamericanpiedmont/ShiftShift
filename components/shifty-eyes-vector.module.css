@@ -1,0 +1,51 @@
+.mark {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.cutout {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.cutout {
+  transition: transform 180ms ease-in-out;
+}
+
+.right {
+  transform: translateX(77%) scaleX(-1);
+}
+
+.left {
+  transform: none;
+}
+
+.blink {
+  animation: blink 520ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.sequence {
+  animation: sequence 1000ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes blink {
+  0%, 36%, 100% { transform: translateX(0) scaleY(1); }
+  58% { transform: translateX(0) scaleY(0.025); }
+}
+
+@keyframes sequence {
+  0% { transform: none; }
+  25% { transform: translateX(77%) scaleX(-1); }
+  50% { transform: none; }
+  65% { transform: scaleY(0.025); }
+  80%, 100% { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cutout {
+    transition: none;
+    animation: none;
+  }
+}

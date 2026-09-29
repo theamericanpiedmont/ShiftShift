@@ -1,0 +1,43 @@
+.route {
+  display: contents;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.overlay svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+:global(html[data-brand-transition]) .route :global([data-shifty-eyes]) {
+  visibility: hidden;
+}
+
+.route[data-phase="out"] :global([data-transition-fade]) {
+  animation: contentOut 600ms ease 180ms both;
+}
+
+.route[data-phase="in"] :global([data-transition-fade]) {
+  animation: contentIn 380ms ease both;
+}
+
+@keyframes contentOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes contentIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route[data-phase] :global([data-transition-fade]) {
+    animation: none;
+  }
+}
