@@ -148,9 +148,9 @@ export const capabilityPages: CapabilityPage[] = [
       "Good decisions rarely begin with a perfect dataset or an obvious answer. We help clients structure messy questions, connect the right data, and build practical pricing, analytical, and decision tools that turn complexity into something people can actually use.",
     examples: [
       {
-        title: "Travel Price Monitoring",
+        title: "INTERACTIVE: TRAVEL PRICE MONITORING",
         description:
-          "A pricing intelligence tool designed to track fare changes over time, identify movement, and surface meaningful pricing patterns.",
+          "We built this tool to help our client evaluate how different inventory and pricing curves changed over time, compare options across categories, and make more informed purchasing decisions based on real observed price movement.",
         label: "Selected example",
       },
       {

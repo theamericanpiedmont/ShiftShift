@@ -288,6 +288,102 @@
   height: auto;
 }
 
+.demoImageTrigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: opacity 180ms ease;
+}
+
+.demoImageTrigger:hover {
+  opacity: 0.88;
+}
+
+.demoImageCue {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max-content;
+  max-width: calc(100% - 2rem);
+  transform: translate(-50%, -50%);
+  padding: 0.85rem 1.15rem;
+  border-radius: 2px;
+  background: #ff8000;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+}
+
+.demoImageTrigger:hover .demoImageCue,
+.demoImageTrigger:focus-visible .demoImageCue {
+  filter: brightness(1.08);
+}
+
+.demoImageTrigger:focus-visible,
+.demoClose:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.examplesInteractive[data-demo-open] {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.examplesInteractive[data-demo-open] .examplesList {
+  display: none;
+}
+
+.examplesInteractive[data-demo-open] .visualStage {
+  position: relative;
+  top: auto;
+  display: block;
+  min-width: 0;
+}
+
+.demoExpandedPanel {
+  position: relative;
+  padding-top: 2.5rem;
+  animation: visualFadeIn 220ms ease;
+}
+
+.demoLoading {
+  margin: 0;
+  padding: var(--space-lg) 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.demoClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--foreground);
+  font: inherit;
+  font-size: 1.65rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.demoClose:hover {
+  color: var(--accent);
+}
+
 .visualPair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -438,6 +534,15 @@
 
   .focusList {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demoImageTrigger,
+  .demoExpandedPanel,
+  .examplesInteractive[data-pricing-demo] .visualPanel {
+    animation: none;
+    transition: none;
   }
 }
 
