@@ -73,6 +73,98 @@
   color: var(--muted);
 }
 
+.capabilityIndex {
+  --homepage-masthead-size: clamp(3rem, 7.6vw, 6.5rem);
+  --homepage-statement-size: clamp(1.05rem, 1.55vw, 1.28rem);
+  --homepage-label-size: clamp(1.18rem, 1.95vw, 1.95rem);
+  --homepage-row-step: calc(2.4rem + 1px + var(--homepage-label-size) * 0.98);
+  --number-baseline-adjust: 0px;
+  position: fixed;
+  z-index: 5;
+  top: calc(
+    var(--space-lg) + 1.25rem + var(--homepage-masthead-size) * 0.94 + 0.9rem
+    + var(--homepage-statement-size) * 3.08 + clamp(4rem, 5.2vw, 4.5rem)
+    + var(--homepage-label-size) - 9px + var(--number-baseline-adjust)
+  );
+  left: calc(max(var(--space-lg), (100vw - 84rem) / 2) - 1.109375px);
+  width: 24px;
+}
+
+.capabilityIndexList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--homepage-row-step) - 36px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.capabilityIndexList::before {
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 50%;
+  width: 1px;
+  background: var(--border);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.capabilityIndexItem {
+  position: relative;
+  z-index: 1;
+  width: 24px;
+  height: 36px;
+}
+
+.capabilityIndexLink {
+  display: grid;
+  width: 24px;
+  height: 36px;
+  place-items: center;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.capabilityIndexLink span {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--muted) 48%, var(--border));
+  border-radius: 50%;
+  background: var(--background);
+  font-size: 0.65rem;
+  line-height: 1;
+  transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.capabilityIndexLink:hover span,
+.capabilityIndexLink:focus-visible span {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.capabilityIndexLink[data-current] span {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--background);
+}
+
+.capabilityIndexLink:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-radius: 50%;
+}
+
+@media (max-width: 1380px) {
+  .capabilityIndex {
+    --number-baseline-adjust: 1px;
+  }
+}
+
 .section {
   margin-top: var(--space-2xl);
   padding-top: var(--space-md);
@@ -300,6 +392,37 @@
 }
 
 @media (max-width: 760px) {
+  .capabilityIndex {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin: var(--space-xl) 0;
+    transform: none;
+  }
+
+  .capabilityIndexList {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .capabilityIndexList::before {
+    top: 50%;
+    right: 18px;
+    bottom: auto;
+    left: 18px;
+    width: auto;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+
+  .capabilityIndexItem,
+  .capabilityIndexLink {
+    width: 44px;
+    height: 44px;
+  }
+
   .examplesInteractive {
     grid-template-columns: 1fr;
     gap: var(--space-xl);

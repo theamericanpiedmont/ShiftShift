@@ -23,7 +23,8 @@ export default function HomePage() {
           </h1>
         </div>
         <p className={styles.statement} data-transition-fade>
-          Bring us your hardest problem. We’ll turn it into your biggest strength.
+          <span>Bring us your hardest problem. We’ll turn it into your biggest strength.</span>
+          <span className={styles.statementRhythm}>Analyze. Design. Build. Deploy.</span>
         </p>
       </section>
 

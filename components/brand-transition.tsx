@@ -45,15 +45,26 @@ export function BrandCapabilityLink({
   href,
   className,
   children,
+  ariaLabel,
+  current,
 }: {
   href: string;
   className: string;
   children: ReactNode;
+  ariaLabel?: string;
+  current?: boolean;
 }) {
   const onClick = useBrandTransitionClick();
 
   return (
-    <Link href={href} className={className} onClick={(event) => onClick?.(event, href)}>
+    <Link
+      href={href}
+      className={className}
+      aria-label={ariaLabel}
+      aria-current={current ? "page" : undefined}
+      data-current={current || undefined}
+      onClick={(event) => onClick?.(event, href)}
+    >
       {children}
     </Link>
   );
@@ -124,6 +135,7 @@ export function BrandTransition({ children }: { children: ReactNode }) {
       event.preventDefault();
       return;
     }
+    if (selectedDestination === pathname) return;
 
     const destination = selectedDestination ?? (pathname === "/"
       ? capabilityLinks[Math.floor(Math.random() * capabilityLinks.length)]?.href

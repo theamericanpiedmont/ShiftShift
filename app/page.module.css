@@ -77,6 +77,13 @@
   color: var(--foreground);
 }
 
+.statementRhythm {
+  display: block;
+  margin-top: 0.25em;
+  color: var(--muted);
+  font-size: 0.8em;
+}
+
 .index {
   padding: clamp(4rem, 5.2vw, 4.5rem) 0 var(--space-2xl);
 }

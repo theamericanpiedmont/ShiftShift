@@ -4,8 +4,8 @@ export type CapabilityLink = {
 };
 
 export const capabilityLinks: CapabilityLink[] = [
-  { href: "/product-development", label: "Product Development" },
   { href: "/platform-development", label: "Platform Development" },
+  { href: "/product-development", label: "Product Development" },
   { href: "/site-development", label: "Site Development & Publishing" },
   { href: "/pricing-solutions", label: "Pricing & Decision Solutions" },
   { href: "/research", label: "Research & Analysis" },

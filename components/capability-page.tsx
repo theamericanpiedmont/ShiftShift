@@ -4,14 +4,40 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ShiftyEyesVector } from "@/components/shifty-eyes-vector";
-import { useBrandTransitionClick } from "@/components/brand-transition";
+import { BrandCapabilityLink, useBrandTransitionClick } from "@/components/brand-transition";
 import type { CapabilityImage, CapabilityPage as CapabilityPageData } from "@/app/capabilities";
+import { capabilityLinks } from "@/app/capability-routes";
 import styles from "./capability-page.module.css";
 import homeStyles from "@/app/page.module.css";
 
 type CapabilityPageProps = {
   page: CapabilityPageData;
 };
+
+function CapabilityIndex({ currentHref }: { currentHref: string }) {
+  return (
+    <nav className={styles.capabilityIndex} aria-label="Capability pages">
+      <ol className={styles.capabilityIndexList}>
+        {capabilityLinks.map((capability, index) => {
+          const current = capability.href === currentHref;
+
+          return (
+            <li key={capability.href} className={styles.capabilityIndexItem}>
+              <BrandCapabilityLink
+                href={capability.href}
+                className={styles.capabilityIndexLink}
+                ariaLabel={`${capability.label} — capability ${index + 1} of ${capabilityLinks.length}`}
+                current={current}
+              >
+                <span aria-hidden="true">{index + 1}</span>
+              </BrandCapabilityLink>
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
+  );
+}
 
 function ExampleImages({
   images,
@@ -81,6 +107,8 @@ export function CapabilityPage({ page }: CapabilityPageProps) {
         <h1 className={styles.title}>{page.title}</h1>
         <p className={styles.description}>{page.description}</p>
       </section>
+
+      <CapabilityIndex currentHref={`/${page.slug}`} />
 
       {page.examples ? (
         <section className={styles.section} data-transition-fade>
