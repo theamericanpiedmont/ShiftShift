@@ -85,7 +85,7 @@ export function CapabilityPage({ page, pricingVoyages }: CapabilityPageProps) {
   useEffect(() => {
     if (demoOpen) {
       hasOpenedDemo.current = true;
-      demoClose.current?.focus();
+      demoClose.current?.focus({ preventScroll: true });
     } else if (hasOpenedDemo.current) {
       demoTrigger.current?.focus();
     }
@@ -239,6 +239,7 @@ export function CapabilityPage({ page, pricingVoyages }: CapabilityPageProps) {
                       }
                       defaultCabin="Oceanview"
                       historicalLabel="Historical pricing window. Archived observations only."
+                      scrollToInterfaceOnMount
                     />
                   </div>
                 ) : (

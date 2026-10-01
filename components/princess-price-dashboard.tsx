@@ -29,6 +29,7 @@ type DashboardProps = {
   defaultVoyageId: string;
   historicalLabel: string;
   defaultCabin: string;
+  scrollToInterfaceOnMount?: boolean;
 };
 
 function formatCurrency(value: number) {
@@ -80,11 +81,13 @@ export function PriceDashboard({
   defaultVoyageId,
   historicalLabel,
   defaultCabin,
+  scrollToInterfaceOnMount = false,
 }: DashboardProps) {
   const [selectedVoyageId, setSelectedVoyageId] = useState(defaultVoyageId);
   const [selectedCabin, setSelectedCabin] = useState(defaultCabin);
   const [inspection, setInspection] = useState<{ series: CabinSeries; index: number } | null>(null);
   const svgRef = useRef<SVGSVGElement>(null);
+  const voyageRailRef = useRef<HTMLDivElement>(null);
   const tapStart = useRef<{ x: number; y: number; id: number } | null>(null);
   const [plotWidth, setPlotWidth] = useState(CHART_WIDTH);
 
@@ -95,6 +98,20 @@ export function PriceDashboard({
     observer.observe(svg);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!scrollToInterfaceOnMount || !window.matchMedia("(max-width: 760px)").matches) return;
+
+    const frame = window.requestAnimationFrame(() => {
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      voyageRailRef.current?.scrollIntoView({
+        behavior: reducedMotion ? "auto" : "smooth",
+        block: "start",
+      });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [scrollToInterfaceOnMount]);
   const chartId = useId();
 
   const selectedVoyage = useMemo(
@@ -255,7 +272,7 @@ export function PriceDashboard({
 
       <section className="visual-panel">
         <div className="chart-layout">
-          <div className="voyage-rail" role="tablist" aria-label="Curated voyage">
+          <div ref={voyageRailRef} className="voyage-rail" role="tablist" aria-label="Curated voyage">
             <div className="voyage-rail-track" aria-hidden="true" />
             {voyages.map((voyage) => {
               const isActive = voyage.id === selectedVoyage.id;

@@ -543,6 +543,7 @@
     overflow-x: auto;
     gap: 16px;
     padding: 0 0 10px;
+    scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 72px);
   }
 
   .voyage-rail-track {
@@ -583,8 +584,13 @@
 }
 
 @media (max-width: 760px) {
+  .demo-context,
   .metrics-grid,
   .milestone-strip,
+  .footnote {
+    display: none;
+  }
+
   .insight-row {
     grid-template-columns: 1fr;
   }
