@@ -70,12 +70,38 @@
 }
 
 .capabilityMasthead {
+  .brandLockup {
+    min-height: calc(var(--masthead-size) * 0.94);
+  }
+
+  .capabilityCopy {
+    display: flex;
+    height: calc(var(--masthead-size) * 0.7);
+    min-width: 0;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   .capabilityWordmark {
-    visibility: hidden;
+    flex: 0 0 auto;
+    max-width: none;
+    font-size: calc(var(--masthead-size) * 0.46);
   }
 
   .statement {
+    display: block;
+    max-width: none;
+    font-size: clamp(0.65rem, calc(var(--masthead-size) * 0.125), 0.9rem);
+    line-height: 1.2;
+  }
+
+  .statementPrimary {
     display: none;
+  }
+
+  .statementRhythm {
+    margin-top: 0;
+    font-size: 1em;
   }
 }
 
@@ -161,12 +187,39 @@
   }
 
   .capabilityMasthead {
+    .brandLockup {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 0;
+      align-items: center;
+      gap: 0.9rem clamp(0.4rem, 2vw, 0.6rem);
+    }
+
+    .capabilityCopy {
+      display: contents;
+    }
+
     .capabilityWordmark {
       visibility: visible;
+      flex: 1 1 auto;
+      font-size: var(--masthead-size);
     }
 
     .statement {
       display: block;
+      flex: 0 0 100%;
+      max-width: 48rem;
+      font-size: clamp(1.05rem, 1.55vw, 1.28rem);
+      line-height: 1.6;
+    }
+
+    .statementPrimary {
+      display: inline;
+    }
+
+    .statementRhythm {
+      margin-top: 0.25em;
+      font-size: 0.8em;
     }
   }
 

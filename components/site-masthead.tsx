@@ -19,19 +19,29 @@ export function SiteMasthead({ eyes, capabilityPage = false }: SiteMastheadProps
       <div className={styles.brandLockup}>
         {eyes}
         {capabilityPage ? (
-          <span className={`${styles.title} ${styles.capabilityWordmark}`} aria-hidden="true">
-            {wordmark}
-          </span>
+          <div className={styles.capabilityCopy}>
+            <span className={`${styles.title} ${styles.capabilityWordmark}`} aria-hidden="true">
+              {wordmark}
+            </span>
+            <p className={styles.statement}>
+              <span className={styles.statementPrimary}>
+                Bring us your hardest problem. We’ll turn it into your biggest strength.
+              </span>
+              <span className={styles.statementRhythm}>Analyze. Design. Build. Deploy.</span>
+            </p>
+          </div>
         ) : (
           <h1 className={styles.title} data-transition-fade>
             {wordmark}
           </h1>
         )}
       </div>
-      <p className={styles.statement} data-transition-fade={!capabilityPage || undefined}>
-        <span>Bring us your hardest problem. We’ll turn it into your biggest strength.</span>
-        <span className={styles.statementRhythm}>Analyze. Design. Build. Deploy.</span>
-      </p>
+      {!capabilityPage ? (
+        <p className={styles.statement} data-transition-fade>
+          <span>Bring us your hardest problem. We’ll turn it into your biggest strength.</span>
+          <span className={styles.statementRhythm}>Analyze. Design. Build. Deploy.</span>
+        </p>
+      ) : null}
     </>
   );
 
