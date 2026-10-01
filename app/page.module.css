@@ -69,6 +69,16 @@
   text-transform: none;
 }
 
+.capabilityMasthead {
+  .capabilityWordmark {
+    visibility: hidden;
+  }
+
+  .statement {
+    display: none;
+  }
+}
+
 .statement {
   margin: 0;
   max-width: 48rem;
@@ -148,6 +158,16 @@
     max-width: none;
     font-size: var(--masthead-size);
     white-space: nowrap;
+  }
+
+  .capabilityMasthead {
+    .capabilityWordmark {
+      visibility: visible;
+    }
+
+    .statement {
+      display: block;
+    }
   }
 
   .capabilityLink {

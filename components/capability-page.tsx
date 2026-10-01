@@ -2,15 +2,16 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { ShiftyEyesVector } from "@/components/shifty-eyes-vector";
+import { SiteMasthead } from "@/components/site-masthead";
+import homeStyles from "@/app/page.module.css";
 import { BrandCapabilityLink, useBrandTransitionClick } from "@/components/brand-transition";
 import type { CuratedVoyage } from "@/components/princess-price-dashboard";
 import type { CapabilityImage, CapabilityPage as CapabilityPageData } from "@/app/capabilities";
 import { capabilityLinks } from "@/app/capability-routes";
 import styles from "./capability-page.module.css";
-import homeStyles from "@/app/page.module.css";
 
 type CapabilityPageProps = {
   page: CapabilityPageData;
@@ -108,8 +109,9 @@ export function CapabilityPage({ page, pricingVoyages }: CapabilityPageProps) {
     <div className={styles.page}>
       <div className={styles.homeLinkSpace} aria-hidden="true" />
       <div className={styles.homeAnchor}>
-        <div className={homeStyles.hero}>
-          <div className={homeStyles.brandLockup}>
+        <SiteMasthead
+          capabilityPage
+          eyes={(
             <Link
               href="/"
               className={`${homeStyles.brandMark} ${styles.homeLink}`}
@@ -120,12 +122,8 @@ export function CapabilityPage({ page, pricingVoyages }: CapabilityPageProps) {
             >
               <ShiftyEyesVector />
             </Link>
-            <span className={`${homeStyles.title} ${styles.anchorReference}`} aria-hidden="true">
-              <span className={homeStyles.titleMain}>SHIFT SHIFT</span>
-              <span className={homeStyles.titleCompany}>co.</span>
-            </span>
-          </div>
-        </div>
+          )}
+        />
       </div>
 
       <section className={styles.hero} data-transition-fade>

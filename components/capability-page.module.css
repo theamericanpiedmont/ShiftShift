@@ -21,11 +21,6 @@
   pointer-events: auto;
 }
 
-.anchorReference {
-  /* Match homepage line wrapping and vertical centering without visible copy. */
-  visibility: hidden;
-}
-
 @media (max-width: 640px) {
   .homeAnchor {
     top: var(--space-md);
@@ -547,6 +542,26 @@
 }
 
 @media (max-width: 640px) {
+  .page {
+    padding-top: 0;
+  }
+
+  .homeLinkSpace {
+    display: none;
+  }
+
+  .homeAnchor {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    pointer-events: auto;
+  }
+
+  .hero {
+    margin-top: var(--space-lg);
+  }
+
   .kicker,
   .sectionLabel {
     letter-spacing: 0.16em;

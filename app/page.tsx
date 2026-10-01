@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageShell } from "@/components/page-shell";
 import { SiteFooter } from "@/components/site-footer";
 import { BrandCapabilityLink, BrandEyesButton } from "@/components/brand-transition";
+import { SiteMasthead } from "@/components/site-masthead";
 import { capabilityLinks } from "./capabilities";
 import styles from "./page.module.css";
 
@@ -14,19 +15,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <PageShell size="wide">
-      <section className={styles.hero}>
-        <div className={styles.brandLockup}>
-          <BrandEyesButton className={`${styles.brandMark} ${styles.brandButton}`} />
-          <h1 className={styles.title} data-transition-fade>
-            <span className={styles.titleMain}>SHIFT SHIFT</span>
-            <span className={styles.titleCompany}>co.</span>
-          </h1>
-        </div>
-        <p className={styles.statement} data-transition-fade>
-          <span>Bring us your hardest problem. We’ll turn it into your biggest strength.</span>
-          <span className={styles.statementRhythm}>Analyze. Design. Build. Deploy.</span>
-        </p>
-      </section>
+      <SiteMasthead eyes={<BrandEyesButton className={`${styles.brandMark} ${styles.brandButton}`} />} />
 
       <section className={styles.index} data-transition-fade>
         <nav aria-label="Capabilities" className={styles.capabilityNav}>
