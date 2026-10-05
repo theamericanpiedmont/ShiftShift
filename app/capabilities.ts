@@ -195,22 +195,42 @@ export const capabilityPages: CapabilityPage[] = [
     slug: "consulting",
     title: "Consulting & Advisory",
     description:
-      "Sometimes the hardest problems do not fit neatly inside a single discipline. We work alongside clients to untangle ambiguous challenges, bringing together strategy, analytics, product, operations, technology, and hands-on execution to find a practical way forward.",
+      "Growing businesses often reach a point where the work is succeeding faster than the systems behind it. We help founders and teams understand how the business actually works, organize the moving pieces, and design practical operating models, processes, tools, and growth plans that make the business easier to run — and easier to grow.",
+    examples: [
+      {
+        title: "SMALL BUSINESS OPERATING MODEL",
+        description:
+          "We help founder-led businesses make the work behind the business visible: programs and services, customer flow, capacity, staffing, scheduling, and revenue structure. Together we map operational constraints and test growth scenarios, turning what has largely lived in the founder’s head into a clearer model for running and growing the business.",
+        label: "Advisory",
+      },
+      {
+        title: "CUSTOMER & BUSINESS SYSTEMS",
+        description:
+          "We organize fragmented customer and family records, registrations, program history, source attribution, revenue, and communications into a useful operating picture. That can mean shaping a CRM, redesigning workflows, or evaluating software and platforms so information supports better customer care and more grounded management and growth decisions.",
+        label: "Systems design",
+      },
+      {
+        title: "GROWTH & FOUNDER ADVISORY",
+        description:
+          "We work directly with founders to compare expansion choices, new offerings, staffing, technology, and capacity through practical scenarios and clear priorities. From build-versus-buy decisions to reducing founder dependence, we help teams plan implementation and preserve the quality of their work as the business grows.",
+        label: "Founder advisory",
+      },
+    ],
     focusAreas: [
-      "AI-enabled operating models",
-      "Human-AI collaboration",
-      "Analytics strategy",
-      "Product strategy",
-      "Customer experience",
-      "Pricing and revenue strategy",
-      "Workflow and process design",
-      "Decision-support systems",
+      "Business and operating model design",
+      "Programs, services, and growth planning",
+      "Customer journeys and business data",
+      "Process, workflow, and capacity design",
+      "Revenue and customer analysis",
+      "Technology and software evaluation",
+      "Founder decision support",
+      "Practical implementation",
     ],
     editorialHeading: "BUILT FROM EXPERIENCE. GROUNDED IN THE WORK.",
     editorialParagraphs: [
-      "Shift Shift Co. brings years of experience across strategy, analytics, product, operations, customer experience, pricing, and emerging technology, paired with hands-on experience actually building the tools, platforms, and products behind the recommendations.",
-      "We work best with teams facing ambiguous problems: where the opportunity is real, the answer is not obvious, and progress requires both strategic thinking and practical execution.",
-      "Whether you need a fresh operating model, a clearer decision system, an AI-enabled workflow, a new product direction, or simply an experienced partner to help untangle a hard problem, we'd love to hear what you're working on.",
+      "We start by understanding how the business works today: where work gets stuck, what customers need, and which decisions depend too heavily on one person. Then we help organize the moving pieces into a clearer way to operate and grow.",
+      "The work can span management advice, customer and revenue analysis, operating processes, and technology choices. When a plan needs more than a recommendation, we can design and build the CRM, internal tool, decision system, workflow, or customer experience that puts it into practice.",
+      "We work alongside founders and small teams to make the next steps useful, testable, and realistic for the business they have — and the one they want to become.",
     ],
     cta: "Let’s build something useful. →",
     ctaHref: "mailto:consulting@shiftshift.co",
