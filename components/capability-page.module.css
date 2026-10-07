@@ -2,6 +2,18 @@
   padding: var(--space-md) 0 var(--space-2xl);
 }
 
+@media (min-width: 761px) {
+  .page {
+    padding-inline-start: max(
+      0px,
+      calc(
+        max(var(--space-lg), (100vw - 84rem) / 2) + 5rem
+        - max(var(--space-lg), (100vw - 68rem) / 2)
+      )
+    );
+  }
+}
+
 .homeLinkSpace {
   /* Preserve the existing capability content position. */
   --masthead-size: clamp(3rem, 7.6vw, 6.5rem);
