@@ -7,6 +7,10 @@
   --accent: #c85b1d;
 }
 
+.shell[data-flush-top="true"] {
+  padding-top: 0;
+}
+
 .shell[data-size="wide"] .inner {
   width: min(100%, 84rem);
 }

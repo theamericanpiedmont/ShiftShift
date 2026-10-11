@@ -195,7 +195,7 @@ export const capabilityPages: CapabilityPage[] = [
     slug: "consulting",
     title: "Consulting & Advisory",
     description:
-      "Growing businesses often reach a point where the work is succeeding faster than the systems behind it. We help founders and teams understand how the business actually works, organize the moving pieces, and design practical operating models, processes, tools, and growth plans that make the business easier to run — and easier to grow.",
+      "Growing businesses often reach a point where the work is succeeding faster than the systems behind it. We help founders and teams understand how the business actually works, organize the moving pieces, and design practical operating models, processes, tools, and growth plans that make the business easier to run and easier to grow.",
     examples: [
       {
         title: "SMALL BUSINESS OPERATING MODEL",
@@ -230,7 +230,7 @@ export const capabilityPages: CapabilityPage[] = [
     editorialParagraphs: [
       "We start by understanding how the business works today: where work gets stuck, what customers need, and which decisions depend too heavily on one person. Then we help organize the moving pieces into a clearer way to operate and grow.",
       "The work can span management advice, customer and revenue analysis, operating processes, and technology choices. When a plan needs more than a recommendation, we can design and build the CRM, internal tool, decision system, workflow, or customer experience that puts it into practice.",
-      "We work alongside founders and small teams to make the next steps useful, testable, and realistic for the business they have — and the one they want to become.",
+      "We work alongside founders and small teams to make the next steps useful, testable, and realistic for the business they have, and the one they want to become.",
     ],
     cta: "Let’s build something useful. →",
     ctaHref: "mailto:consulting@shiftshift.co",

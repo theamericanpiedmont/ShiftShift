@@ -19,8 +19,8 @@ export default function KrangSupportPage() {
         <h1 className={styles.title}>Krang Support</h1>
         <p className={styles.lead}>Golf-cart telemetry and navigation for Peachtree City.</p>
         <p className={styles.body}>
-          Krang is a custom navigation and vehicle telemetry app designed for Project Cartier, a
-          2009 E-Z-GO RXV equipped with the Krang telemetry system.
+          Krang is a custom navigation and vehicle telemetry app designed for a 2009 E-Z-GO RXV
+          equipped with compatible telemetry hardware.
         </p>
       </ContentSection>
 
@@ -60,7 +60,7 @@ export default function KrangSupportPage() {
           <li>Bluetooth connectivity to supported Krang hardware</li>
         </ul>
         <p className={styles.body}>
-          Krang requires compatible Project Cartier vehicle hardware for live telemetry features.
+          Krang requires compatible vehicle hardware for live telemetry features.
         </p>
         <p className={styles.body}>
           Navigation coverage is currently focused on the Peachtree City, Georgia golf-cart

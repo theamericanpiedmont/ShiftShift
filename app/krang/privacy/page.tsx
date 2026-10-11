@@ -44,9 +44,9 @@ export default function KrangPrivacyPage() {
       <ContentSection>
         <h2 className={styles.heading}>Bluetooth and vehicle communication</h2>
         <p className={styles.body}>
-          Krang uses Bluetooth to communicate with compatible Krang or Project Cartier vehicle
-          hardware. Through that connection, the app may receive live telemetry or status data from
-          the vehicle systems in order to display it to the driver and support related features.
+          Krang uses Bluetooth to communicate with compatible vehicle hardware. Through that
+          connection, the app may receive live telemetry or status data from vehicle systems in
+          order to display it to the driver and support related features.
         </p>
       </ContentSection>
 

@@ -1,0 +1,680 @@
+.sectionEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.brandMotif {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.brandMotif span {
+  display: block;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 0.1rem;
+}
+
+.brandMotif span:nth-child(1) {
+  background: #ff8900;
+}
+
+.brandMotif span:nth-child(2) {
+  background: #f45a08;
+}
+
+.brandMotif span:nth-child(3) {
+  background: #a93b0c;
+}
+
+.whatWeDo,
+.howWeWork,
+.work {
+  padding-block: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.work .editorialIntro {
+  margin-bottom: 2rem;
+}
+
+.editorialIntro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: end;
+  margin-top: 1.15rem;
+  margin-bottom: 3rem;
+}
+
+.editorialHeadline {
+  max-width: 17ch;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.35rem, 4.8vw, 3.15rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.editorialHeadline em,
+.pullQuote em,
+.footerHeadline em {
+  color: var(--hero-orange);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.editorialAside {
+  max-width: 42ch;
+  padding-bottom: 0.2rem;
+}
+
+.editorialAside p {
+  margin: 0;
+  color: color-mix(in srgb, var(--foreground) 86%, var(--muted));
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.orangeDash {
+  display: block;
+  width: 2.1rem;
+  height: 2px;
+  margin-top: 1.15rem;
+  background: var(--hero-orange);
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--border);
+}
+
+.serviceColumn {
+  min-width: 0;
+  padding: 1.35rem 1.1rem 0 0;
+}
+
+.serviceColumn + .serviceColumn {
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--border);
+}
+
+.serviceNumber {
+  color: var(--hero-orange);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+}
+
+.serviceTitle,
+.methodName {
+  margin: 0.75rem 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.42rem;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.serviceDescription,
+.methodDescription {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.serviceLinks {
+  display: grid;
+  gap: 0.4rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.serviceLink {
+  color: var(--foreground);
+  font-size: 0.75rem;
+  line-height: 1.35;
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+}
+
+.serviceLink:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.serviceLink:focus-visible,
+.footerColumn a:focus-visible,
+.footerBrand:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.darkBand {
+  --home-dark: #11141b;
+  --home-cream: #f5f2ea;
+  position: relative;
+  isolation: isolate;
+  color: var(--home-cream);
+}
+
+.darkBand::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: var(--home-dark);
+  box-shadow: 0 0 0 100vmax var(--home-dark);
+  clip-path: inset(0 -100vmax);
+  content: "";
+}
+
+.footerBand::before {
+  bottom: calc(-1 * (var(--space-md) + var(--space-lg)));
+}
+
+.philosophy {
+  padding-block: clamp(4rem, 8vw, 6.5rem);
+}
+
+.philosophyGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.94fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.pullQuote {
+  display: grid;
+  gap: 0.02em;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.1rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.pullQuote span {
+  display: block;
+}
+
+.philosophyCopy .sectionEyebrow {
+  margin-bottom: 1.2rem;
+  color: color-mix(in srgb, var(--home-cream) 72%, transparent);
+}
+
+.philosophyCopy > p:not(.sectionEyebrow) {
+  margin: 0;
+  color: color-mix(in srgb, var(--home-cream) 78%, transparent);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.philosophyCopy > p + p {
+  margin-top: 0.85rem;
+}
+
+.philosophyCopy .philosophyClose {
+  margin-top: 1.25rem;
+  color: var(--home-cream);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.philosophyCopy .orangeDash {
+  margin-top: 1rem;
+}
+
+.howWeWork {
+  padding-top: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.methodGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--border);
+}
+
+.methodStep {
+  min-width: 0;
+  padding: 1.25rem 0.9rem 0 0;
+}
+
+.methodStep + .methodStep {
+  padding-left: 1rem;
+  border-left: 1px solid var(--border);
+}
+
+.methodNumber {
+  color: var(--hero-orange);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+}
+
+.methodName {
+  margin-top: 0.65rem;
+  font-size: 1.28rem;
+}
+
+.scroller {
+  min-width: 0;
+  margin-top: 1.3rem;
+}
+
+.scrollerControls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  margin-bottom: 0.55rem;
+}
+
+.scrollerControls button {
+  display: grid;
+  width: 2rem;
+  height: 1.8rem;
+  place-items: center;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--foreground);
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease, opacity 180ms ease;
+}
+
+.scrollerControls button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.scrollerControls button:disabled {
+  opacity: 0.34;
+  cursor: default;
+}
+
+.projectRail {
+  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  min-width: 0;
+  gap: 1.15rem;
+}
+
+.projectRail:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+.project {
+  display: block;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+.workVisual {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.workVisual img {
+  object-fit: cover;
+}
+
+.projectMeta {
+  margin-top: 0.65rem;
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.projectTitle {
+  margin: 0.28rem 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.projectDescription {
+  margin: 0.28rem 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.projectAction {
+  display: inline-flex;
+  margin-top: 0.55rem;
+  color: var(--hero-orange);
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 160ms ease, color 160ms ease;
+}
+
+.project:hover .projectAction {
+  color: var(--accent);
+  transform: translateX(0.18rem);
+}
+
+.project:focus-visible .projectAction {
+  color: var(--accent);
+}
+
+.footerInner {
+  padding-block: clamp(3.5rem, 7vw, 5.5rem) 1.25rem;
+}
+
+.homeFooter {
+  width: min(100%, 54rem);
+  margin-inline: auto;
+}
+
+.footerInvitation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: end;
+}
+
+.footerHeadline {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.3rem, 5vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.footerActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: flex-end;
+}
+
+.footerActions .heroSecondaryAction {
+  color: var(--home-cream);
+}
+
+.footerColumns {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding-block: 2.25rem;
+  border-bottom: 1px solid rgba(245, 242, 234, 0.2);
+}
+
+.footerBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--home-cream);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.footerBrand img {
+  display: block;
+  width: 2rem;
+  height: auto;
+}
+
+.footerBrand strong {
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.footerBrand em {
+  font-weight: 600;
+  font-style: italic;
+}
+
+.footerBrandColumn p {
+  max-width: 28ch;
+  margin: 0.8rem 0 0;
+  color: color-mix(in srgb, var(--home-cream) 68%, transparent);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.footerColumn {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  gap: 0.45rem;
+  color: color-mix(in srgb, var(--home-cream) 68%, transparent);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.footerColumn h3 {
+  margin: 0;
+  color: var(--home-cream);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footerColumn a {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+}
+
+.footerLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footerColumn a:hover {
+  color: var(--home-cream);
+  text-decoration: underline;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+  color: color-mix(in srgb, var(--home-cream) 52%, transparent);
+  font-size: 0.68rem;
+}
+
+@media (max-width: 900px) {
+  .serviceGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .serviceColumn:nth-child(3) {
+    padding-left: 0;
+    border-top: 1px solid var(--border);
+    border-left: 0;
+  }
+
+  .methodGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .methodStep:nth-child(3) {
+    padding-left: 0;
+    border-top: 1px solid var(--border);
+    border-left: 0;
+  }
+
+  .methodStep:nth-child(4) {
+    border-top: 1px solid var(--border);
+  }
+
+  .footerColumns {
+    grid-template-columns: 1.2fr repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .editorialIntro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .philosophyGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.4rem;
+  }
+
+  .projectRail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .footerBand::before {
+    bottom: calc(-2 * var(--space-md));
+  }
+
+  .whatWeDo,
+  .howWeWork,
+  .work {
+    padding-block: 3rem;
+  }
+
+  .editorialHeadline {
+    max-width: 18ch;
+    font-size: clamp(2.25rem, 9vw, 2.8rem);
+  }
+
+  .serviceGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .serviceColumn,
+  .serviceColumn + .serviceColumn,
+  .serviceColumn:nth-child(3) {
+    padding: 1.1rem 0;
+    border-left: 0;
+  }
+
+  .serviceColumn + .serviceColumn {
+    border-top: 1px solid var(--border);
+  }
+
+  .methodGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .methodStep,
+  .methodStep + .methodStep,
+  .methodStep:nth-child(3) {
+    padding: 1.1rem 0;
+    border-left: 0;
+  }
+
+  .methodStep + .methodStep {
+    border-top: 1px solid var(--border);
+  }
+
+  .philosophy {
+    padding-block: 3.25rem;
+  }
+
+  .pullQuote {
+    font-size: clamp(2.15rem, 8.5vw, 2.8rem);
+  }
+
+  .projectRail {
+    display: flex;
+    gap: 0.85rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: color-mix(in srgb, var(--muted) 35%, transparent) transparent;
+    scrollbar-width: thin;
+  }
+
+  .projectRail::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .projectRail::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--muted) 35%, transparent);
+  }
+
+  .project {
+    flex: 0 0 82%;
+    max-width: 22rem;
+    scroll-snap-align: start;
+  }
+
+  .footerInner {
+    padding-block: 3rem 1rem;
+  }
+
+  .footerInvitation {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .footerHeadline {
+    font-size: clamp(2.35rem, 9vw, 3rem);
+  }
+
+  .footerActions {
+    justify-content: flex-start;
+  }
+
+  .footerColumns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1rem;
+    padding-block: 1.75rem;
+  }
+
+  .footerBrandColumn {
+    grid-column: 1 / -1;
+  }
+
+  .footerColumn {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollerControls button {
+    transition: none;
+  }
+
+  .projectAction {
+    transition: none;
+  }
+}

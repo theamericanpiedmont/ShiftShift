@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { PageShell } from "@/components/page-shell";
 import { CapabilityPage } from "@/components/capability-page";
 import { getCapabilityPage } from "@/app/capabilities";
 
@@ -12,8 +11,6 @@ export const metadata: Metadata = {
 
 export default function ConsultingPage() {
   return (
-    <PageShell>
-      <CapabilityPage page={page} />
-    </PageShell>
+    <CapabilityPage page={page} />
   );
 }

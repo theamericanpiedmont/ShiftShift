@@ -3,14 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import { ShiftyEyesVector } from "@/components/shifty-eyes-vector";
-import { SiteMasthead } from "@/components/site-masthead";
-import homeStyles from "@/app/page.module.css";
-import { BrandCapabilityLink, useBrandTransitionClick } from "@/components/brand-transition";
+import { PageShell } from "@/components/page-shell";
+import { SiteNavigation } from "@/components/site-navigation";
+import { HomeFooter } from "@/components/home-footer";
 import type { CuratedVoyage } from "@/components/princess-price-dashboard";
 import type { CapabilityImage, CapabilityPage as CapabilityPageData } from "@/app/capabilities";
-import { capabilityLinks } from "@/app/capability-routes";
+import homeSections from "@/app/home-sections.module.css";
 import styles from "./capability-page.module.css";
 
 type CapabilityPageProps = {
@@ -25,31 +23,6 @@ const PrincessPriceDashboard = dynamic(
     loading: () => <p className={styles.demoLoading} role="status">Loading historical pricing…</p>,
   },
 );
-
-function CapabilityIndex({ currentHref }: { currentHref: string }) {
-  return (
-    <nav className={styles.capabilityIndex} aria-label="Capability pages">
-      <ol className={styles.capabilityIndexList}>
-        {capabilityLinks.map((capability, index) => {
-          const current = capability.href === currentHref;
-
-          return (
-            <li key={capability.href} className={styles.capabilityIndexItem}>
-              <BrandCapabilityLink
-                href={capability.href}
-                className={styles.capabilityIndexLink}
-                ariaLabel={`${capability.label} — capability ${index + 1} of ${capabilityLinks.length}`}
-                current={current}
-              >
-                <span aria-hidden="true">{index + 1}</span>
-              </BrandCapabilityLink>
-            </li>
-          );
-        })}
-      </ol>
-    </nav>
-  );
-}
 
 function ExampleImages({
   images,
@@ -76,7 +49,6 @@ function ExampleImages({
 }
 
 export function CapabilityPage({ page, pricingVoyages }: CapabilityPageProps) {
-  const onHomeClick = useBrandTransitionClick();
   const hasPricingDemo = page.slug === "pricing-solutions" && Boolean(pricingVoyages?.length);
   const [demoOpen, setDemoOpen] = useState(false);
   const demoTrigger = useRef<HTMLButtonElement | null>(null);
@@ -106,33 +78,23 @@ export function CapabilityPage({ page, pricingVoyages }: CapabilityPageProps) {
     : activeExample?.images ?? (activeExample?.image ? [activeExample.image] : []);
 
   return (
-    <div className={styles.page}>
-      <div className={styles.homeLinkSpace} aria-hidden="true" />
-      <div className={styles.homeAnchor}>
-        <SiteMasthead
-          capabilityPage
-          eyes={(
-            <Link
-              href="/"
-              className={`${homeStyles.brandMark} ${styles.homeLink}`}
-              aria-label="Back to Shift Shift Co. home"
-              data-shifty-eyes
-              prefetch
-              onClick={onHomeClick ?? undefined}
-            >
-              <ShiftyEyesVector />
-            </Link>
-          )}
-        />
-      </div>
-
-      <section className={styles.hero} data-transition-fade>
-        <p className={styles.kicker}>Capability</p>
-        <h1 className={styles.title}>{page.title}</h1>
-        <p className={styles.description}>{page.description}</p>
-      </section>
-
-      <CapabilityIndex currentHref={`/${page.slug}`} />
+    <>
+      <SiteNavigation />
+      <PageShell size="wide" flushTop>
+        <div className={styles.page}>
+          <div className={styles.content}>
+          <section className={styles.hero} data-transition-fade>
+            <p className={styles.kicker}>
+              <span className={homeSections.brandMotif} aria-hidden="true">
+                <span />
+                <span />
+                <span />
+              </span>
+              <span>Capability</span>
+            </p>
+            <h1 className={styles.title}>{page.title}</h1>
+            <p className={styles.description}>{page.description}</p>
+          </section>
 
       {page.examples ? (
         <section className={styles.section} data-transition-fade>
@@ -335,6 +297,10 @@ export function CapabilityPage({ page, pricingVoyages }: CapabilityPageProps) {
           ) : null}
         </section>
       ) : null}
-    </div>
+          </div>
+          <HomeFooter />
+        </div>
+      </PageShell>
+    </>
   );
 }

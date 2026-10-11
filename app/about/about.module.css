@@ -1,0 +1,241 @@
+.aboutPage {
+  width: 100%;
+}
+
+.contentWidth {
+  width: min(calc(100% - 2 * var(--space-lg)), 54rem);
+  margin-inline: auto;
+}
+
+.introduction {
+  padding-block: clamp(3rem, 5vw, 4.5rem);
+  background: #11141b;
+  color: var(--background);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.eyebrowDark {
+  color: #c0c0c0;
+}
+
+.introTitle,
+.profileTitle {
+  display: flex;
+  flex-direction: column;
+  margin: 1.65rem 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.8rem, 5.7vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+}
+
+.introTitle em,
+.profileTitle em {
+  color: var(--hero-orange);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.introCopy {
+  max-width: 66ch;
+  margin-top: 1.75rem;
+  color: #d0cfcf;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.introCopy p,
+.bioCopy p {
+  margin: 0;
+}
+
+.introCopy p + p,
+.bioCopy p + p {
+  margin-top: 1rem;
+}
+
+.founderSection {
+  padding-block: clamp(2.5rem, 4vw, 3.5rem) 2.5rem;
+  background: var(--background);
+}
+
+.eyebrow:not(.eyebrowDark) {
+  color: var(--muted);
+}
+
+.profileTitle {
+  margin: 0.55rem 0 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.profile,
+.associatesProfile {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.55fr) minmax(0, 1.45fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+.profile {
+  margin-top: 1.75rem;
+}
+
+.portrait {
+  position: relative;
+  display: block;
+  min-width: 0;
+  aspect-ratio: 1;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.portraitImage {
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.associatesSection {
+  padding-bottom: 1.5rem;
+  background: var(--background);
+}
+
+.associatesContent {
+  padding-top: clamp(2rem, 3vw, 2.5rem);
+  border-top: 1px solid var(--border);
+}
+
+.comingSoon {
+  display: flex;
+  min-width: 0;
+  aspect-ratio: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: color-mix(in srgb, #e7dfd1 52%, var(--background));
+}
+
+.comingSoonLabel {
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.bioCopy {
+  margin-top: 1rem;
+  color: color-mix(in srgb, var(--foreground) 88%, var(--muted));
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.linkedinLink {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin: 1.5rem 0 0;
+  color: var(--foreground);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.linkedinLink:hover,
+.linkedinLink:focus-visible {
+  color: var(--hero-orange);
+}
+
+.linkedinLink:focus-visible {
+  outline: 2px solid var(--hero-orange);
+  outline-offset: 4px;
+}
+
+.aboutPage :global(footer) {
+  margin-top: 2rem;
+}
+
+@media (max-width: 800px) {
+  .profile,
+  .associatesProfile {
+    grid-template-columns: minmax(10rem, 0.55fr) minmax(0, 1.45fr);
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .contentWidth {
+    width: min(calc(100% - 2 * var(--space-md)), 54rem);
+  }
+
+  .introduction {
+    padding-block: 3rem 3.25rem;
+  }
+
+  .introTitle {
+    margin-top: 1.25rem;
+    font-size: clamp(2.45rem, 10.2vw, 3.25rem);
+  }
+
+  .introCopy {
+    margin-top: 1.5rem;
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
+
+  .introCopy p + p,
+  .bioCopy p + p {
+    margin-top: 0.85rem;
+  }
+
+  .founderSection {
+    padding-block: 2.5rem 2rem;
+  }
+
+  .profileTitle {
+    font-size: clamp(2rem, 7vw, 2.5rem);
+  }
+
+  .profile,
+  .associatesProfile {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+
+  .profile {
+    margin-top: 2rem;
+  }
+
+  .portrait,
+  .comingSoon {
+    width: min(70%, 18rem);
+    justify-self: start;
+  }
+
+  .associatesContent {
+    padding-top: 2rem;
+  }
+
+  .bioCopy {
+    font-size: 0.92rem;
+  }
+}

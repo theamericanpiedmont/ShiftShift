@@ -1,62 +1,56 @@
 .page {
-  padding: var(--space-md) 0 var(--space-2xl);
+  width: min(100%, 54rem);
+  margin-inline: auto;
 }
 
-@media (min-width: 761px) {
-  .page {
-    padding-inline-start: max(
-      0px,
-      calc(
-        max(var(--space-lg), (100vw - 84rem) / 2) + 5rem
-        - max(var(--space-lg), (100vw - 68rem) / 2)
-      )
-    );
-  }
-}
-
-.homeLinkSpace {
-  /* Preserve the existing capability content position. */
-  --masthead-size: clamp(3rem, 7.6vw, 6.5rem);
-  height: calc(var(--masthead-size) * 0.7);
-  margin-bottom: var(--space-2xl);
-}
-
-.homeAnchor {
-  position: absolute;
-  top: var(--space-lg);
-  left: max(var(--space-lg), calc((100% - 84rem) / 2));
-  right: max(var(--space-lg), calc((100% - 84rem) / 2));
-  pointer-events: none;
-}
-
-.homeLink {
-  pointer-events: auto;
-}
-
-@media (max-width: 640px) {
-  .homeAnchor {
-    top: var(--space-md);
-    left: var(--space-md);
-    right: var(--space-md);
-  }
-}
-
-.homeLink:hover {
-  opacity: 0.9;
-}
-
-.homeLink:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 6px;
+.content {
+  padding-bottom: clamp(6.25rem, 8vw, 8.75rem);
 }
 
 .hero {
-  max-width: 44rem;
+  position: relative;
+  isolation: isolate;
   display: grid;
-  gap: var(--space-sm);
+  max-width: none;
+  gap: 0;
+  padding-block: clamp(2.75rem, 4vw, 3.5rem);
+  color: #f5f2ea;
 }
 
-.kicker,
+.hero::before {
+  position: absolute;
+  z-index: -1;
+  inset-block: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: #11141b;
+  content: "";
+}
+
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.85rem;
+  color: rgba(245, 242, 234, 0.72);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 31rem;
+  margin: 0;
+  color: #f5f2ea;
+  font-size: clamp(2rem, 3vw, 2.125rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
 .sectionLabel {
   margin: 0;
   color: var(--muted);
@@ -65,111 +59,16 @@
   text-transform: uppercase;
 }
 
-.title {
-  margin: 0;
-  font-size: clamp(2.8rem, 7vw, 5.75rem);
-  line-height: 0.95;
-  letter-spacing: -0.05em;
-}
-
 .description {
-  margin: var(--space-sm) 0 0;
-  max-width: 38rem;
-  font-size: clamp(1.05rem, 1.9vw, 1.2rem);
-  line-height: 1.75;
-  color: var(--muted);
+  max-width: 48ch;
+  margin: 0.9rem 0 0;
+  color: rgba(245, 242, 234, 0.82);
+  font-size: 0.94rem;
+  line-height: 1.55;
 }
 
-.capabilityIndex {
-  --homepage-masthead-size: clamp(3rem, 7.6vw, 6.5rem);
-  --homepage-statement-size: clamp(1.05rem, 1.55vw, 1.28rem);
-  --homepage-label-size: clamp(1.18rem, 1.95vw, 1.95rem);
-  --homepage-row-step: calc(2.4rem + 1px + var(--homepage-label-size) * 0.98);
-  --number-baseline-adjust: 0px;
-  position: fixed;
-  z-index: 5;
-  top: calc(
-    var(--space-lg) + 1.25rem + var(--homepage-masthead-size) * 0.94 + 0.9rem
-    + var(--homepage-statement-size) * 3.08 + clamp(4rem, 5.2vw, 4.5rem)
-    + var(--homepage-label-size) - 9px + var(--number-baseline-adjust)
-  );
-  left: calc(max(var(--space-lg), (100vw - 84rem) / 2) - 1.109375px);
-  width: 24px;
-}
-
-.capabilityIndexList {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: calc(var(--homepage-row-step) - 36px);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.capabilityIndexList::before {
-  position: absolute;
-  top: 18px;
-  bottom: 18px;
-  left: 50%;
-  width: 1px;
-  background: var(--border);
-  content: "";
-  transform: translateX(-50%);
-}
-
-.capabilityIndexItem {
-  position: relative;
-  z-index: 1;
-  width: 24px;
-  height: 36px;
-}
-
-.capabilityIndexLink {
-  display: grid;
-  width: 24px;
-  height: 36px;
-  place-items: center;
-  color: var(--muted);
-  text-decoration: none;
-}
-
-.capabilityIndexLink span {
-  display: grid;
-  width: 22px;
-  height: 22px;
-  place-items: center;
-  border: 1px solid color-mix(in srgb, var(--muted) 48%, var(--border));
-  border-radius: 50%;
-  background: var(--background);
-  font-size: 0.65rem;
-  line-height: 1;
-  transition: color 160ms ease, border-color 160ms ease, background-color 160ms ease;
-}
-
-.capabilityIndexLink:hover span,
-.capabilityIndexLink:focus-visible span {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.capabilityIndexLink[data-current] span {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: var(--background);
-}
-
-.capabilityIndexLink:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
-  border-radius: 50%;
-}
-
-@media (max-width: 1380px) {
-  .capabilityIndex {
-    --number-baseline-adjust: 1px;
-  }
+.hero + .section {
+  margin-top: clamp(3rem, 5vw, 4.5rem);
 }
 
 .section {
@@ -187,8 +86,8 @@
 .examplesInteractive {
   margin-top: var(--space-xl);
   display: grid;
-  grid-template-columns: minmax(0, 31.5rem) minmax(0, 1fr);
-  gap: clamp(2rem, 4vw, 4rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 2.5vw, 2rem);
   align-items: start;
 }
 
@@ -494,38 +393,13 @@
   line-height: 1.6;
 }
 
+@media (max-width: 1024px) {
+  .content {
+    padding-bottom: clamp(5rem, 8vw, 6.25rem);
+  }
+}
+
 @media (max-width: 760px) {
-  .capabilityIndex {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    margin: var(--space-xl) 0;
-    transform: none;
-  }
-
-  .capabilityIndexList {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 0;
-  }
-
-  .capabilityIndexList::before {
-    top: 50%;
-    right: 18px;
-    bottom: auto;
-    left: 18px;
-    width: auto;
-    height: 1px;
-    transform: translateY(-50%);
-  }
-
-  .capabilityIndexItem,
-  .capabilityIndexLink {
-    width: 44px;
-    height: 44px;
-  }
-
   .examplesInteractive {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
@@ -544,6 +418,20 @@
   }
 }
 
+@media (max-width: 640px) {
+  .content {
+    padding-bottom: clamp(4rem, 16vw, 5rem);
+  }
+
+  .hero {
+    padding-block: 2.1rem 2rem;
+  }
+
+  .title {
+    font-size: clamp(2rem, 8vw, 2.125rem);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .demoImageTrigger,
   .demoExpandedPanel,
@@ -556,22 +444,6 @@
 @media (max-width: 640px) {
   .page {
     padding-top: 0;
-  }
-
-  .homeLinkSpace {
-    display: none;
-  }
-
-  .homeAnchor {
-    position: static;
-    top: auto;
-    left: auto;
-    right: auto;
-    pointer-events: auto;
-  }
-
-  .hero {
-    margin-top: var(--space-lg);
   }
 
   .kicker,

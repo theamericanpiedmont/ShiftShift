@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { PageShell } from "@/components/page-shell";
 import { CapabilityPage } from "@/components/capability-page";
 import { getCapabilityPage } from "@/app/capabilities";
 import { getPrincessVoyages } from "@/lib/princess-history";
@@ -13,8 +12,6 @@ export const metadata: Metadata = {
 
 export default function PricingSolutionsPage() {
   return (
-    <PageShell>
-      <CapabilityPage page={page} pricingVoyages={getPrincessVoyages()} />
-    </PageShell>
+    <CapabilityPage page={page} pricingVoyages={getPrincessVoyages()} />
   );
 }
